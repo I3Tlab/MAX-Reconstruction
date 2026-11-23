@@ -191,7 +191,3 @@ Center of Massachusetts General Hospital and Harvard Medical School
 - Fang Liu (fliu12@mgh.harvard.edu)
 
 149 13th Street, Suite 2301, Charlestown, Massachusetts 02129, USA
-
-## License
-
-BSD 2-Clause, see [LICENSE](LICENSE).
