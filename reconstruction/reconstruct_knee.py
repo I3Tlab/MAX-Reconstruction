@@ -333,7 +333,7 @@ def refine_slice(k_slice, csm_slice, mask2d, x_inr_slice, guide_slice, cfg: Knee
 # --------------------------------------------------------------------------------------
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    d = HERE / "data"
+    d = HERE.parent / "MAX_data" / "knee"
     p.add_argument("--kspace", type=Path, default=d / "Knee_T2w_kspace.mat")
     p.add_argument("--kspace-key", default="T2w_kspace")
     p.add_argument("--csm", type=Path, default=d / "Knee_T1w2T2w_tstCsm.mat")

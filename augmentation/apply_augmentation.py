@@ -10,9 +10,9 @@ Output (.mat): augmented_images (N, H, W, D), tissue_mask (H, W, D), original_im
 chain_lengths, chain_params, selection_ranks, source_indices.
 
   python apply_augmentation.py
-  python apply_augmentation.py --reference data/Mprage2Flair.mat --reference-key Mprage2Flair \
-      --mask data/Flair_tissue_mask.mat --mask-key tissue_mask \
-      --augmentations data/selected_augmentations.json --out output/augmented_images.mat
+  python apply_augmentation.py --reference ../MAX_data/brain_FLAIR/Mprage2Flair.mat --reference-key Mprage2Flair \
+      --mask ../MAX_data/brain_FLAIR/Flair_tissue_mask.mat --mask-key tissue_mask \
+      --augmentations ../MAX_data/brain_FLAIR/selected_augmentations.json --out output/augmented_images.mat
 """
 from __future__ import annotations
 
@@ -125,11 +125,11 @@ def apply_chain(image: np.ndarray, chain: list[dict], mask: np.ndarray, clip_ran
 # --------------------------------------------------------------------------------------
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--reference", type=Path, default=HERE / "data" / "Mprage2Flair.mat", help="reference image (.mat)")
+    p.add_argument("--reference", type=Path, default=HERE.parent / "MAX_data" / "brain_FLAIR" / "Mprage2Flair.mat", help="reference image (.mat)")
     p.add_argument("--reference-key", default="Mprage2Flair")
-    p.add_argument("--mask", type=Path, default=HERE / "data" / "Flair_tissue_mask.mat", help="tissue mask (.mat)")
+    p.add_argument("--mask", type=Path, default=HERE.parent / "MAX_data" / "brain_FLAIR" / "Flair_tissue_mask.mat", help="tissue mask (.mat)")
     p.add_argument("--mask-key", default="tissue_mask")
-    p.add_argument("--augmentations", type=Path, default=HERE / "data" / "selected_augmentations.json")
+    p.add_argument("--augmentations", type=Path, default=HERE.parent / "MAX_data" / "brain_FLAIR" / "selected_augmentations.json")
     p.add_argument("--out", type=Path, default=HERE / "output" / "augmented_images.mat")
     a = p.parse_args()
 

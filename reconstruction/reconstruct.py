@@ -422,7 +422,7 @@ def evaluate(recon: np.ndarray, ref: np.ndarray, tissue: np.ndarray) -> dict[str
 # --------------------------------------------------------------------------------------
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    d = HERE / "data"
+    d = HERE.parent / "MAX_data" / "brain_FLAIR"
     p.add_argument("--kspace", type=Path, default=d / "Flair_kspace.mat")
     p.add_argument("--kspace-key", default="Flair_kspace")
     p.add_argument("--csm", type=Path, default=d / "Flair_tstCsm.mat")
