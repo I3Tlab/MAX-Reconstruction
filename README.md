@@ -162,8 +162,7 @@ python reconstruction/reconstruct_knee.py   # -> reconstruction/output/recon_Kne
 - `SamMask`: the undersampling mask used.
 - Training histories and settings.
 
-Results of this code on the example data (one slice per case). The numbers are PSNR / SSIM of the whole volume against
-the fully sampled image (for the knee, the first 18 slices).
+Results of this code on the example data (one slice per case). 
 
 ![Example results](example_results.png)
 
